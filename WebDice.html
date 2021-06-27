@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<script type="text/javascript" src="/webiopi.js"></script>
+<script type="text/javascript" src="/jquery.js"></script>
+<script type="text/javascript">
+webiopi().ready( function()
+{	// Initialize
+	webiopi().callMacro( "ChangeLedActive", [0, 0] );
+} );
+
+function sleep(waitMsec) {
+	var startMsec = new Date();
+	while (new Date() - startMsec < waitMsec);
+}
+
+function onButtonClick()
+{
+	var num = Math.floor( Math.random () * 6) + 1;
+	if( num == 1 ) {
+		webiopi().callMacro( "ChangeLedActive", [1, 1] );
+	}
+	if( num == 2 ) {
+		webiopi().callMacro( "ChangeLedActive", [2, 1] );
+	}
+	if( num == 3 ) {
+		webiopi().callMacro( "ChangeLedActive", [3, 1] );
+	}
+	if( num == 4 ) {
+		webiopi().callMacro( "ChangeLedActive", [4, 1] );
+	}
+	if( num == 5 ) {
+		webiopi().callMacro( "ChangeLedActive", [5, 1] );
+	}
+	if( num == 6 ) {
+		webiopi().callMacro( "ChangeLedActive", [6, 1] );
+	}
+	sleep(1800);
+	document.frm.d.value = num;
+	return;
+}
+</script>
+</head>
+<body>
+電子サイコロっ！<br><br>
+<form name="frm">
+<INPUT type=”button” value="サイコロを振るっ！" style="width:120px;height:50px" onclick="onButtonClick()"><br><br>
+<input type="text" name="d" size="3" style="width:40px;height:40px;font-size:30px">
+</form>
+<br>
+</body>
+</html>

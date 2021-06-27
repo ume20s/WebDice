@@ -1,0 +1,31 @@
+2018-08-31 21:15:56 - WebIOPi - INFO - Starting WebIOPi/0.7.1/Python3.5
+2018-08-31 21:15:56 - WebIOPi - DEBUG - Mapping GPIO.digitalCount to REST GET /GPIO/count
+2018-08-31 21:15:56 - WebIOPi - DEBUG - Mapping GPIO.digitalRead to REST GET /GPIO/%(channel)d/value
+2018-08-31 21:15:56 - WebIOPi - DEBUG - Mapping GPIO.digitalWrite to REST POST /GPIO/%(channel)d/value/%(value)d
+2018-08-31 21:15:56 - WebIOPi - DEBUG - Mapping GPIO.getFunctionString to REST GET /GPIO/%(channel)d/function
+2018-08-31 21:15:56 - WebIOPi - DEBUG - Mapping GPIO.getPulse to REST GET /GPIO/%(channel)d/pulse
+2018-08-31 21:15:56 - WebIOPi - DEBUG - Mapping GPIO.outputSequence to REST POST /GPIO/%(channel)d/sequence/%(args)s
+2018-08-31 21:15:56 - WebIOPi - DEBUG - Mapping GPIO.portRead to REST GET /GPIO/*/integer
+2018-08-31 21:15:56 - WebIOPi - DEBUG - Mapping GPIO.portWrite to REST POST /GPIO/*/integer/%(value)d
+2018-08-31 21:15:56 - WebIOPi - DEBUG - Mapping GPIO.pulse to REST POST /GPIO/%(channel)d/pulse/
+2018-08-31 21:15:56 - WebIOPi - DEBUG - Mapping GPIO.pulseAngle to REST POST /GPIO/%(channel)d/pulseAngle/%(value)f
+2018-08-31 21:15:56 - WebIOPi - DEBUG - Mapping GPIO.pulseRatio to REST POST /GPIO/%(channel)d/pulseRatio/%(value)f
+2018-08-31 21:15:56 - WebIOPi - DEBUG - Mapping GPIO.setFunctionString to REST POST /GPIO/%(channel)d/function/%(value)s
+2018-08-31 21:15:56 - WebIOPi - DEBUG - Mapping GPIO.wildcard to REST GET /GPIO/*
+2018-08-31 21:15:56 - WebIOPi - INFO - GPIO - Native mapped to REST API /GPIO
+2018-08-31 21:15:56 - WebIOPi - INFO - Loading configuration from /etc/webiopi/config
+2018-08-31 21:15:56 - WebIOPi - INFO - Loading myproject from /home/pi/servoctrl/servoctrl.py
+2018-08-31 21:15:56 - WebIOPi - ERROR - name 'LED4PIN' is not defined
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/WebIOPi-0.7.1-py3.5-linux-armv7l.egg/webiopi/__main__.py", line 75, in <module>
+    main(sys.argv)
+  File "/usr/local/lib/python3.5/dist-packages/WebIOPi-0.7.1-py3.5-linux-armv7l.egg/webiopi/__main__.py", line 69, in main
+    server = Server(port=port, configfile=configfile, scriptfile=scriptfile)
+  File "/usr/local/lib/python3.5/dist-packages/WebIOPi-0.7.1-py3.5-linux-armv7l.egg/webiopi/server/__init__.py", line 75, in __init__
+    loader.loadScript(name, source, self.restHandler)
+  File "/usr/local/lib/python3.5/dist-packages/WebIOPi-0.7.1-py3.5-linux-armv7l.egg/webiopi/utils/loader.py", line 12, in loadScript
+    script.setup()
+  File "/home/pi/servoctrl/servoctrl.py", line 17, in setup
+    GPIO.setFunction( LED4PIN, GPIO.OUT )
+NameError: name 'LED4PIN' is not defined
+pi@raspberrypi:~ $ 
